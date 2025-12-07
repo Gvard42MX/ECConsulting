@@ -52,36 +52,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service.css">
 </head>
 <body class="text-gray-800 overflow-x-hidden">
 
 <!-- NAVBAR -->
 <nav class="navbar-blur text-white px-4 md:px-8 py-4 shadow-2xl sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
+
         <!-- Logo -->
         <div class="flex items-center space-x-3 flex-shrink-0">
             <div class="gradient-bg p-3 rounded-xl shadow-lg pulse-ring">
-                <i class="fas fa-calculator text-white text-lg md:text-xl"></i>
+                <img src="Logo.png" alt="Logo" class="h-10 w-auto object-contain">
             </div>
             <div>
                 <h1 class="text-xl md:text-2xl font-bold gradient-text">EC CONSULTING</h1>
-                <p class="text-xs text-blue-200 font-medium">Registered-Accountant, Tax Consultant and Tax Attorney</p>
+                <p class="text-xs text-blue-600 font-medium">Registered-Accountant, Tax Consultant and Tax Attorney</p>
             </div>
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button x-data="{ mobileOpen: false }" @click="mobileOpen = !mobileOpen" class="md:hidden text-white text-2xl hover:text-blue-300 transition-all">
-            <i class="fas" :class="mobileOpen ? 'fa-times' : 'fa-bars'"></i>
-        </button>
+        <div x-data="{ mobileOpen: false }" class="md:hidden">
+            <button @click="mobileOpen = !mobileOpen" class="text-white text-2xl hover:text-blue-300 transition-all">
+                <i class="fas" :class="mobileOpen ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
 
         <!-- Navigation Menu -->
-        <div x-data="{ mobileOpen: false }" class="hidden md:flex space-x-1 lg:space-x-2 font-medium items-center">
-            <a href="index.html" class="navbar-link hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-white/10 transition-all">Home</a>
-            <a href="index.html#about" class="navbar-link hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-white/10 transition-all">About</a>
-            <a href="services.html" class="navbar-link hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-white/10 transition-all bg-white/20">Service</a>
-            <a href="index.html#contact" class="navbar-link hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-white/10 transition-all">Contact</a>
+         <div class="flex space-x-2 font-medium items-center text-blue-700">
+            <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">Home</a>
+            <a href="index.html#about" class="px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">About</a>
+            <a href="services.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">Service</a>
+            <a href="index.html#contact" class="px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">Contact</a>
+            <a href="publikasi.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">Publikasi</a>
         </div>
+
     </div>
 </nav>
 
@@ -90,13 +95,13 @@
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="page-title-content max-w-6xl mx-auto px-6 py-24">
         <div class="text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">Our Professional Services</h1>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 te">Our Professional Services</h1>
             <p class="text-xl text-blue-100 max-w-3xl mx-auto">
                 Comprehensive accounting, tax, litigation, and judicial review services tailored to your business needs
             </p>
             <div class="mt-10 flex justify-center">
                 <a href="#contact-form" class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 shadow-lg inline-flex items-center">
-                    <i class="fas fa-envelope mr-3"></i> Request Consultation
+                    <i class="fas fa-envelope mr-3"></i> Contact Us
                 </a>
             </div>
         </div>
@@ -150,7 +155,7 @@
                     <div class="bg-purple-600 p-3 rounded-lg mr-4">
                         <i class="fas fa-gavel text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900">Litigation</h3>
+                    <h3 class="text-xl font-bold text-gray-900">Tax Litigation</h3>
                 </div>
                 <p class="text-gray-600 text-sm mb-4">Legal representation for tax disputes and appeals</p>
                 <div class="flex justify-between items-center">
@@ -181,12 +186,10 @@
 </section>
 
 <!-- Accounting Services -->
-<section id="accounting" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+<section id="accounting" class="py-20 bg-gradient-to-b from-white-50 to-white">
     <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-center mb-12">
-            <div class="service-icon blue">
-                <i class="fas fa-book text-white text-3xl"></i>
-            </div>
+            
             <div class="ml-6">
                 <h2 class="text-4xl font-bold gradient-text">Accounting Services</h2>
                 <p class="text-gray-600 mt-2">Professional financial management and reporting solutions</p>
@@ -194,42 +197,44 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Service 1 -->
+            <!-- Service 1 - Bookkeeping & Compilation -->
             <div class="service-item-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-blue-100 p-4 rounded-xl mr-4">
                         <i class="fas fa-file-invoice-dollar text-blue-600 text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Jasa Pembuatan Laporan Keuangan</h3>
-                        <p class="text-blue-600 font-medium">Financial Statement Preparation</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Jasa Pembukuan dan Kompilasi</h3>
+                        <p class="text-blue-600 font-medium">Bookkeeping & Compilation Service</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Kami menyediakan jasa pembuatan laporan keuangan yang lengkap dan akurat sesuai dengan standar akuntansi yang berlaku.</p>
+                <p class="text-gray-600 mb-6">Mencatat transaksi keuangan suatu entitas secara akurat, sistimatis dan menyusunnya menjadi Laporan Keuangan yang lengkap.</p>
                 <div class="space-y-3 mb-8">
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Laporan Neraca (Balance Sheet)</span>
+                        <span>Pencatatan transaksi keuangan secara akurat dan sistematis</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Laporan Laba Rugi (Income Statement)</span>
+                        <span>Penyusunan Neraca (Balance Sheet)</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Laporan Arus Kas (Cash Flow Statement)</span>
+                        <span>Penyusunan Laporan Laba Rugi (Income Statement)</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Catatan atas Laporan Keuangan (Notes)</span>
+                        <span>Laporan Perubahan Ekuitas dan Arus Kas</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                        <span>Format sesuai standar akuntansi yang berlaku</span>
                     </div>
                 </div>
-                <a href="#contact-form" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+                
             </div>
 
-            <!-- Service 2 -->
+            <!-- Service 2 - Financial Report Review -->
             <div class="service-item-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-blue-100 p-4 rounded-xl mr-4">
@@ -237,65 +242,40 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Jasa Review Laporan Keuangan</h3>
-                        <p class="text-blue-600 font-medium">Financial Statement Review</p>
+                        <p class="text-blue-600 font-medium">Financial Report Review Service</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Review independen terhadap laporan keuangan untuk memastikan kewajaran dan kepatuhan terhadap standar akuntansi.</p>
+                <p class="text-gray-600 mb-6">Supervisi dan pemeriksaan pembukuan serta laporan keuangan untuk memastikan akurasi dan kredibilitas informasi.</p>
                 <div class="space-y-3 mb-8">
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Analisis kesesuaian dengan PSAK</span>
+                        <span>Supervisi dan asistensi pembukuan</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Identifikasi area perbaikan</span>
+                        <span>Pemeriksaan kelengkapan pencatatan transaksi</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Rekomendasi perbaikan sistem akuntansi</span>
+                        <span>Verifikasi penggunaan akun (COA) yang tepat</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-blue-500 mr-3"></i>
-                        <span>Verifikasi akurasi data keuangan</span>
+                        <span>Pengecekan posting ke kategori yang tepat</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-blue-500 mr-3"></i>
+                        <span>Peningkatan kredibilitas informasi keuangan</span>
                     </div>
                 </div>
-                <a href="#contact-form" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
-            </div>
-        </div>
-
-        <!-- Additional Accounting Services -->
-        <div class="grid md:grid-cols-3 gap-6 mt-12">
-            <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                <div class="bg-blue-50 p-4 rounded-lg mb-4 w-fit">
-                    <i class="fas fa-calculator text-blue-600 text-xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-900 mb-2">Bookkeeping Services</h4>
-                <p class="text-gray-600 text-sm">Pencatatan transaksi keuangan yang sistematis</p>
-            </div>
-            
-            <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                <div class="bg-blue-50 p-4 rounded-lg mb-4 w-fit">
-                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-900 mb-2">Financial Analysis</h4>
-                <p class="text-gray-600 text-sm">Analisis kinerja dan kesehatan keuangan</p>
-            </div>
-            
-            <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                <div class="bg-blue-50 p-4 rounded-lg mb-4 w-fit">
-                    <i class="fas fa-file-alt text-blue-600 text-xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-900 mb-2">Financial Reporting</h4>
-                <p class="text-gray-600 text-sm">Penyusunan laporan keuangan periodik</p>
+               
             </div>
         </div>
     </div>
 </section>
 
 <!-- Tax Services -->
-<section id="tax" class="py-20 bg-white">
+<section id="tax" class="py-20 bg-green">
     <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-center mb-12">
             <div class="service-icon green">
@@ -308,7 +288,7 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Service 1 -->
+            <!-- Service 1 - Tax Consultation -->
             <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-green-100 p-4 rounded-xl mr-4">
@@ -316,30 +296,98 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Konsultasi Pajak</h3>
-                        <p class="text-green-600 font-medium">Tax Consultation</p>
+                        <p class="text-green-600 font-medium">Tax Consultation Service</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Konsultasi menyeluruh terkait permasalahan perpajakan dan strategi penghematan pajak yang legal.</p>
+                <p class="text-gray-600 mb-6">Konsultasi lisan dan tertulis terkait penerapan peraturan perpajakan yang tepat untuk menghindari risiko dan sanksi.</p>
                 <ul class="space-y-2 mb-8">
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Analisis perpajakan komprehensif</span>
+                        <span>Konsultasi lisan dan tertulis</span>
                     </li>
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Strategi penghematan pajak yang legal</span>
+                        <span>Penerapan peraturan perpajakan sesuai bidang usaha</span>
                     </li>
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Konsultasi regulasi perpajakan terbaru</span>
+                        <span>Pencegahan risiko dan sanksi perpajakan</span>
                     </li>
                 </ul>
-                <a href="#contact-form" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+               
             </div>
 
-            <!-- Service 2 -->
+            <!-- Service 2 - Tax Administration -->
+            <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-green-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-file-contract text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Administrasi Pajak</h3>
+                        <p class="text-green-600 font-medium">Tax Administration Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Bantuan proses administrasi perpajakan untuk wajib pajak orang pribadi dan badan.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Permohonan, penon-aktifan, pencabutan NPWP</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pengurusan SPPKP (PKP)</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pengajuan Surat Keterangan Bebas (SKB)</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Proses administrasi lainnya</span>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <!-- Service 3 - Monthly/Yearly Tax Reporting -->
+            <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-green-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-file-signature text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Pelaporan Pajak</h3>
+                        <p class="text-green-600 font-medium">Monthly/Yearly Tax Reporting Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Layanan lengkap perhitungan dan pelaporan kewajiban perpajakan bulanan dan tahunan.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>SPT Masa PPN</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>SPT PPh 21, 23, 25, 26</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>SPT PPh Final UMKM</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>SPT Tahunan Orang Pribadi dan Badan</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Penyiapan SSE untuk pembayaran pajak</span>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <!-- Service 4 - Tax Planning -->
             <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-green-100 p-4 rounded-xl mr-4">
@@ -347,105 +395,243 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Perencanaan Pajak</h3>
-                        <p class="text-green-600 font-medium">Tax Planning</p>
+                        <p class="text-green-600 font-medium">Tax Planning Service</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Perencanaan strategis untuk meminimalkan kewajiban pajak dan memaksimalkan manfaat insentif.</p>
+                <p class="text-gray-600 mb-6">Analisis dan implementasi strategi perencanaan pajak yang efektif secara legal (tax avoidance).</p>
                 <ul class="space-y-2 mb-8">
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Tax planning strategis</span>
+                        <span>Analisis keuangan perusahaan</span>
                     </li>
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Optimisasi insentif pajak</span>
+                        <span>Strategi perencanaan pajak yang legal</span>
                     </li>
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Restrukturisasi transaksi untuk efisiensi pajak</span>
+                        <span>Analisis implikasi pajak dari transaksi usaha</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pengaturan struktur bisnis yang tepat</span>
                     </li>
                 </ul>
-                <a href="#contact-form" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+               
             </div>
 
-            <!-- Service 3 -->
+            <!-- Service 5 - Tax Review -->
             <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-green-100 p-4 rounded-xl mr-4">
-                        <i class="fas fa-file-signature text-green-600 text-2xl"></i>
+                        <i class="fas fa-search-plus text-green-600 text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Pengisian SPT</h3>
-                        <p class="text-green-600 font-medium">Tax Return Filing</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Tinjauan Pajak</h3>
+                        <p class="text-green-600 font-medium">Tax Review Service</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Layanan lengkap pengisian dan pelaporan SPT Tahunan dan Masa dengan akurasi terjamin.</p>
+                <p class="text-gray-600 mb-6">Identifikasi dan antisipasi risiko pajak melalui penerapan ketentuan perpajakan yang sesuai.</p>
                 <ul class="space-y-2 mb-8">
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Penyusunan SPT Tahunan PPh Badan/Orang Pribadi</span>
+                        <span>Identifikasi tingkat risiko pajak</span>
                     </li>
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Pelaporan SPT Masa (PPN, PPh 21, 23, 4(2))</span>
+                        <span>Antisipasi risiko pajak yang akan timbul</span>
                     </li>
                     <li class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
-                        <span>Representasi dalam pemeriksaan pajak</span>
+                        <span>Penerapan ketentuan perpajakan yang sesuai</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Kesiapan menghadapi pemeriksaan pajak</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pencegahan beban/sanksi pajak tidak semestinya</span>
                     </li>
                 </ul>
-                <a href="#contact-form" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+                
+            </div>
+
+            <!-- Service 6 - Tax Compliance -->
+            <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-green-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-clipboard-check text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Kepatuhan Pajak</h3>
+                        <p class="text-green-600 font-medium">Tax Compliance Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Layanan lengkap kepatuhan pajak untuk meminimalkan risiko sanksi administrasi.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Perhitungan dan Penyetoran Pajak tepat waktu</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Penyusunan SPT Masa dan Tahunan</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pembuatan Bukti Potong Pajak (e-Bupot)</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Review Kepatuhan Pajak menyeluruh</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Tindak lanjut administrasi perpajakan</span>
+                    </li>
+                </ul>
+               
+            </div>
+
+            <!-- Service 7 - Tax Return -->
+            <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-green-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-undo-alt text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Pengembalian Pajak</h3>
+                        <p class="text-green-600 font-medium">Tax Return Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Bantuan proses pengembalian kelebihan pembayaran pajak (restitusi) sesuai peraturan.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pengembalian kelebihan PPh</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pengembalian kelebihan PPN</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Proses restitusi sesuai peraturan berlaku</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pendampingan proses administrasi</span>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <!-- Service 8 - Tax Audit -->
+            <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-green-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-user-shield text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Pemeriksaan Pajak</h3>
+                        <p class="text-green-600 font-medium">Tax Audit Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Pendampingan dan perwakilan klien selama proses pemeriksaan pajak.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pendampingan sejak awal hingga selesai pemeriksaan</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Jawaban lisan dan tulisan atas pertanyaan pemeriksa</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Bantuan penyediaan data dan bukti yang diminta</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Komunikasi dengan pihak kantor pajak</span>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <!-- Service 9 - Tax Objection -->
+            <div class="service-item-card bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-green-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-gavel text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Keberatan Pajak</h3>
+                        <p class="text-green-600 font-medium">Tax Objection Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Pengajuan permohonan keberatan atas surat ketetapan pajak yang dinilai tidak sesuai.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pengajuan permohonan keberatan ke Ditjen Pajak</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Penyiapan surat keberatan dan dokumen pendukung</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Pendampingan pertemuan dengan penelaah keberatan</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-sm"></i>
+                        <span>Penjelasan keberatan yang diajukan wajib pajak</span>
+                    </li>
+                </ul>
+                
             </div>
         </div>
     </div>
 </section>
 
-<!-- Litigation Services -->
-<section id="litigation" class="py-20 bg-gradient-to-b from-purple-50 to-white">
+<!-- Tax Litigation Services -->
+<section id="litigation" class="py-20 bg-gradient-to-b from-white-50 to-white">
     <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-center mb-12">
-            <div class="service-icon purple">
-                <i class="fas fa-gavel text-white text-3xl"></i>
-            </div>
+            
             <div class="ml-6">
-                <h2 class="text-4xl font-bold gradient-text">Litigation Services</h2>
+                <h2 class="text-4xl font-bold gradient-text">Tax Litigation Services</h2>
                 <p class="text-gray-600 mt-2">Legal representation and dispute resolution for tax matters</p>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Service 1 -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service 1 - Tax Appeal -->
             <div class="service-item-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-purple-100 p-4 rounded-xl mr-4">
                         <i class="fas fa-balance-scale-left text-purple-600 text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Banding & Gugatan</h3>
-                        <p class="text-purple-600 font-medium">Appeal & Lawsuit</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Permohonan Banding</h3>
+                        <p class="text-purple-600 font-medium">Tax Appeal Service</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Pendampingan dalam proses banding dan gugatan perpajakan di semua tingkat peradilan.</p>
-                <div class="grid grid-cols-2 gap-4 mb-8">
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-900 mb-2 text-sm">Pengadilan Pajak</h4>
-                        <p class="text-gray-600 text-xs">Representasi di Pengadilan Pajak untuk sengketa perpajakan</p>
+                <p class="text-gray-600 mb-6">Perwakilan sebagai kuasa hukum dalam penyelesaian sengketa di Pengadilan Pajak melalui upaya hukum banding.</p>
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Perwakilan sebagai kuasa hukum</span>
                     </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-900 mb-2 text-sm">PTUN</h4>
-                        <p class="text-gray-600 text-xs">Gugatan di Pengadilan Tata Usaha Negara</p>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Penyelesaian sengketa di Pengadilan Pajak</span>
                     </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-900 mb-2 text-sm">Kasasi</h4>
-                        <p class="text-gray-600 text-xs">Upaya hukum kasasi di Mahkamah Agung</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-900 mb-2 text-sm">Peninjauan Kembali</h4>
-                        <p class="text-gray-600 text-xs">Peninjauan kembali putusan pengadilan</p>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Upaya hukum permohonan banding (kasasi)</span>
                     </div>
                 </div>
                 <a href="#contact-form" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-800 transition-all">
@@ -453,52 +639,62 @@
                 </a>
             </div>
 
-            <!-- Service 2 -->
+            <!-- Service 2 - Tax Lawsuit -->
+            <div class="service-item-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                <div class="flex items-start mb-6">
+                    <div class="bg-purple-100 p-4 rounded-xl mr-4">
+                        <i class="fas fa-file-contract text-purple-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Permohonan Gugatan</h3>
+                        <p class="text-purple-600 font-medium">Tax Lawsuit Service</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Perwakilan sebagai kuasa hukum dalam penyelesaian sengketa di Pengadilan Pajak melalui upaya hukum gugatan.</p>
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Perwakilan sebagai kuasa hukum</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Penyelesaian sengketa di Pengadilan Pajak</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Upaya hukum permohonan gugatan</span>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Service 3 - Case Review & Reconsideration -->
             <div class="service-item-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift">
                 <div class="flex items-start mb-6">
                     <div class="bg-purple-100 p-4 rounded-xl mr-4">
                         <i class="fas fa-undo-alt text-purple-600 text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Peninjauan Kembali (PK)</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Peninjauan Kembali</h3>
                         <p class="text-purple-600 font-medium">Case Review & Reconsideration</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Layanan peninjauan kembali untuk kasus-kasus perpajakan yang memerlukan pembahasan ulang.</p>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-lg mr-4 mt-1">
-                            <i class="fas fa-search text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Case Review</h4>
-                            <p class="text-gray-600 text-sm">Analisis mendalam terhadap putusan pengadilan sebelumnya</p>
-                        </div>
+                <p class="text-gray-600 mb-6">Perwakilan sebagai kuasa hukum dalam penyelesaian sengketa di Mahkamah Agung melalui upaya hukum Peninjauan Kembali.</p>
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Perwakilan di Mahkamah Agung</span>
                     </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-lg mr-4 mt-1">
-                            <i class="fas fa-file-contract text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Legal Strategy</h4>
-                            <p class="text-gray-600 text-sm">Penyusunan strategi hukum untuk peninjauan kembali</p>
-                        </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Upaya hukum Peninjauan Kembali</span>
                     </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-lg mr-4 mt-1">
-                            <i class="fas fa-balance-scale text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Court Representation</h4>
-                            <p class="text-gray-600 text-sm">Representasi di persidangan peninjauan kembali</p>
-                        </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-purple-500 mr-3"></i>
+                        <span>Terhadap putusan Pengadilan Pajak</span>
                     </div>
                 </div>
-                <a href="#contact-form" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+               
             </div>
         </div>
     </div>
@@ -512,13 +708,13 @@
                 <i class="fas fa-balance-scale text-white text-3xl"></i>
             </div>
             <div class="ml-6">
-                <h2 class="text-4xl font-bold gradient-text">Judicial Review</h2>
-                <p class="text-gray-600 mt-2">Constitutional and judicial review services</p>
+                <h2 class="text-4xl font-bold gradient-text">Judicial Review Services</h2>
+                <p class="text-gray-600 mt-2">Constitutional and judicial review of tax regulations</p>
             </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Service 1 -->
+            <!-- Service 1 - Supreme Court Review -->
             <div class="service-item-card bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl shadow-lg border border-red-100 hover-lift h-full">
                 <div class="flex items-start mb-6">
                     <div class="bg-red-100 p-4 rounded-xl mr-4">
@@ -526,34 +722,32 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Uji Materi - Mahkamah Agung</h3>
-                        <p class="text-red-600 font-medium">Supreme Court Review</p>
+                        <p class="text-red-600 font-medium">Judicial Review @ Supreme Court</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Pengujian peraturan perundang-undangan di bawah undang-undang terhadap undang-undang di Mahkamah Agung.</p>
+                <p class="text-gray-600 mb-6">Perwakilan sebagai kuasa hukum di Mahkamah Agung dalam pengajuan permohonan uji materi peraturan perpajakan.</p>
                 <div class="space-y-3 mb-8">
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Pengujian peraturan pemerintah</span>
+                        <span>Perwakilan sebagai kuasa hukum di Mahkamah Agung</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Pengujian peraturan menteri</span>
+                        <span>Pengajuan permohonan uji materi</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Pengujian peraturan daerah</span>
+                        <span>Peraturan perpajakan di bawah Undang-Undang</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Representasi di sidang Mahkamah Agung</span>
+                        <span>Diduga bertentangan dengan Undang-Undang</span>
                     </div>
                 </div>
-                <a href="#contact-form" class="inline-flex items-center text-red-600 font-semibold hover:text-red-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+                
             </div>
 
-            <!-- Service 2 -->
+            <!-- Service 2 - Constitutional Court Review -->
             <div class="service-item-card bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl shadow-lg border border-red-100 hover-lift h-full">
                 <div class="flex items-start mb-6">
                     <div class="bg-red-100 p-4 rounded-xl mr-4">
@@ -561,520 +755,270 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Uji Materi - Mahkamah Konstitusi</h3>
-                        <p class="text-red-600 font-medium">Constitutional Court Review</p>
+                        <p class="text-red-600 font-medium">Judicial Review @ Constitutional Court</p>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Pengujian undang-undang terhadap Undang-Undang Dasar 1945 di Mahkamah Konstitusi.</p>
+                <p class="text-gray-600 mb-6">Perwakilan sebagai kuasa hukum di Mahkamah Konstitusi dalam pengajuan permohonan uji materi undang-undang perpajakan.</p>
                 <div class="space-y-3 mb-8">
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Pengujian formil undang-undang</span>
+                        <span>Perwakilan sebagai kuasa hukum di Mahkamah Konstitusi</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Pengujian materil undang-undang</span>
+                        <span>Pengajuan permohonan uji materi</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Sengketa kewenangan lembaga negara</span>
+                        <span>Undang-Undang perpajakan</span>
                     </div>
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-red-500 mr-3"></i>
-                        <span>Representasi di sidang Mahkamah Konstitusi</span>
+                        <span>Diduga bertentangan dengan UUD RI Tahun 1945</span>
                     </div>
                 </div>
-                <a href="#contact-form" class="inline-flex items-center text-red-600 font-semibold hover:text-red-800 transition-all">
-                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
-                </a>
+                
             </div>
         </div>
     </div>
 </section>
 
-<!-- Contact Form Section -->
-<section id="contact-form" class="py-20 bg-gradient-to-b from-blue-50 to-white">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold gradient-text mb-4">Request Service Consultation</h2>
-            <p class="text-gray-600 text-lg max-w-3xl mx-auto">Fill out the form below and we'll get back to you within 24 hours</p>
-        </div>
-        
-        <div class="bg-white p-10 rounded-2xl shadow-2xl">
-            <form class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-700">Full Name *</label>
-                        <input type="text" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-all" placeholder="Your full name" required />
-                    </div>
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-700">Company Name</label>
-                                                <input type="text" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-all" placeholder="Your company name" />
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-700">Email Address *</label>
-                        <input type="email" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-all" placeholder="you@example.com" required />
-                    </div>
-                    <div>
-                        <label class="block mb-2 font-semibold text-gray-700">Phone Number *</label>
-                        <input type="tel" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-all" placeholder="+62 812-3456-7890" required />
-                    </div>
-                </div>
-                
-                <div>
-                    <label class="block mb-2 font-semibold text-gray-700">Service Category *</label>
-                    <select class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-all" required>
-                        <option value="" disabled selected>Select a service category</option>
-                        <option value="accounting">Accounting Services</option>
-                        <option value="tax">Tax Services</option>
-                        <option value="litigation">Litigation Services</option>
-                        <option value="judicial-review">Judicial Review</option>
-                        <option value="multiple">Multiple Services</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div>
-                    <label class="block mb-2 font-semibold text-gray-700">Specific Services Needed</label>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500" />
-                            <span class="text-gray-700 text-sm">Financial Reports</span>
-                        </label>
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500" />
-                            <span class="text-gray-700 text-sm">Tax Consultation</span>
-                        </label>
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500" />
-                            <span class="text-gray-700 text-sm">Tax Filing</span>
-                        </label>
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500" />
-                            <span class="text-gray-700 text-sm">Litigation</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div>
-                    <label class="block mb-2 font-semibold text-gray-700">Message *</label>
-                    <textarea rows="5" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-all" placeholder="Please describe your needs, timeline, and any specific requirements..." required></textarea>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <input type="checkbox" id="privacy" class="rounded text-blue-600 focus:ring-blue-500" required />
-                    <label for="privacy" class="text-gray-700 text-sm">
-                        I agree to the <a href="#" class="text-blue-600 hover:underline">privacy policy</a> and consent to EC Consulting contacting me regarding my inquiry.
-                    </label>
-                </div>
-                
-                <div class="pt-4">
-                    <button type="submit" class="gradient-bg text-white font-bold py-4 px-8 rounded-xl hover:shadow-xl transform hover:scale-105 transition-all w-full md:w-auto">
-                        <i class="fas fa-paper-plane mr-2"></i> Send Request
-                    </button>
-                </div>
-            </form>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 mt-16">
-            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover-lift">
-                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-phone-alt text-blue-600 text-2xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-900 mb-2">Call Us</h4>
-                <p class="text-gray-600">+62 21 1234 5678</p>
-                <p class="text-sm text-gray-500">Mon-Fri, 9AM-5PM</p>
-            </div>
-            
-            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover-lift">
-                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-envelope text-green-600 text-2xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-900 mb-2">Email Us</h4>
-                <p class="text-gray-600">info@ecconsulting.id</p>
-                <p class="text-sm text-gray-500">Response within 24 hours</p>
-            </div>
-            
-            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover-lift">
-                <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-map-marker-alt text-purple-600 text-2xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-900 mb-2">Visit Us</h4>
-                <p class="text-gray-600">Jakarta Financial Center</p>
-                <p class="text-sm text-gray-500">By appointment only</p>
-            </div>
-        </div>
-    </div>
-</section>
+<section id="contact" class="py-20 gradient-bg text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Ready to Get Started?</h2>
+        <p class="text-center text-blue-100 mb-16 text-lg max-w-3xl mx-auto">Contact us today for a free consultation and discover how we can help your business thrive</p>
 
-<!-- CTA Section -->
-<section class="py-20 gradient-bg text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Optimize Your Financial Operations?</h2>
-        <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
-            Let our team of experts handle your accounting, tax, and legal needs so you can focus on growing your business.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="#contact-form" class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg inline-flex items-center justify-center">
-                <i class="fas fa-calendar-check mr-3"></i> Schedule Consultation
-            </a>
-            <a href="tel:+622112345678" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 inline-flex items-center justify-center">
-                <i class="fas fa-phone-alt mr-3"></i> Call Now
-            </a>
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <!-- Contact Info 1 -->
+            <div class="glass-effect p-8 rounded-2xl hover-lift">
+                <div class="bg-white/20 p-4 rounded-xl mb-4 w-fit">
+                    <i class="fas fa-phone text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Contact Us</h3>
+                <p class="text-blue-100 mb-4">Speak With Us</p>
+                <p class="text-2xl font-bold">0812-98179617</p>
+            </div>
+
+            <!-- Contact Info 2 -->
+            <div class="glass-effect p-8 rounded-2xl hover-lift">
+                <div class="bg-white/20 p-4 rounded-xl mb-4 w-fit">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Email Us</h3>
+                <p class="text-blue-100 mb-4">Get a response within 24 hours</p>
+                <p class="text-xl font-bold">support@ecconsulting.com</p>
+            </div>
+
+            <!-- Contact Info 3 -->
+            <div class="glass-effect p-8 rounded-2xl hover-lift">
+                <div class="bg-white/20 p-4 rounded-xl mb-4 w-fit">
+                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Visit Us</h3>
+                <p class="text-blue-100">Jl. Citra Raya Cikupa, Business Grand Boulevard blok V01A No.277, Ciakar, Kec. Panongan, Kabupaten Tangerang, Banten 15710</p>
+            </div>
+        </div>
+
+        <!-- GRID 2 KOLOM TANPA FORM -->
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+            <!-- Kolom Kiri: Peta Lokasi (Google Maps) -->
+            <div class="glass-effect rounded-2xl overflow-hidden h-[350px]">
+                <iframe 
+                    class="w-full h-full"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.409947389599!2d106.5227929!3d-6.268142599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e420774c6a64039%3A0x3a8f339fc3d67ba8!2sEC%20Consulting!5e0!3m2!1sid!2sid!4v1733400000000!5m2!1sid!2si""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Kolom Kanan: Business Hours + Social -->
+            <div class="space-y-8">
+                <div class="glass-effect p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Business Hours</h3>
+                    <div class="space-y-4 text-blue-100">
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                            <span class="font-medium">Monday - Friday</span>
+                            <span class="font-bold">08:00 - 17:00 WIB</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                            <span class="font-medium">Saturday</span>
+                            <span class="font-bold">08:00 - 13:00 WIB</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                            <span class="font-medium">Sunday</span>
+                            <span class="font-bold text-red-300">Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-effect p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Follow Us</h3>
+                    <p class="text-blue-100 mb-6">Stay updated with our latest insights and services</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl transition-all transform hover:scale-110 w-12 h-12 flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl transition-all transform hover:scale-110 w-12 h-12 flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl transition-all transform hover:scale-110 w-12 h-12 flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl transition-all transform hover:scale-110 w-12 h-12 flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="wave-bg"></div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-10">
-            <!-- Company Info -->
+<footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <!-- Brand -->
             <div>
-                <div class="flex items-center space-x-3 mb-6">
-                    <div class="gradient-bg p-3 rounded-xl">
-                        <i class="fas fa-calculator text-white text-xl"></i>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="gradient-bg p-2 rounded-lg">
+                         <img src="Logo.png" alt="Logo" class="h-10 w-auto object-contain">
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold gradient-text">EC CONSULTING</h3>
-                        <p class="text-sm text-gray-400">Professional Financial Services</p>
+                    <h3 class="text-xl font-bold text-white">EC CONSULTING</h3>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">Professional accounting and tax solutions for sustainable business growth</p>
+                <div class="flex space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-award text-white text-sm"></i>
+                    </div>
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-sm"></i>
+                    </div>
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                        <i class="fas fa-certificate text-white text-sm"></i>
                     </div>
                 </div>
-                <p class="text-gray-400 mb-6">
-                    Providing comprehensive accounting, tax, and legal services to businesses and individuals across Indonesia.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition-all">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-400 transition-all">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-800 transition-all">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-red-600 transition-all">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
             </div>
-            
-            <!-- Quick Links -->
-            <div>
-                <h4 class="text-xl font-bold mb-6 gradient-text">Quick Links</h4>
-                <ul class="space-y-3">
-                    <li><a href="index.html" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Home
-                    </a></li>
-                    <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> About Us
-                    </a></li>
-                    <li><a href="services.html" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Services
-                    </a></li>
-                    <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Contact
-                    </a></li>
-                </ul>
-            </div>
-            
+
             <!-- Services -->
             <div>
-                <h4 class="text-xl font-bold mb-6 gradient-text">Our Services</h4>
+                <h4 class="font-semibold text-white mb-4 text-lg">Services</h4>
                 <ul class="space-y-3">
-                    <li><a href="#accounting" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-file-invoice-dollar text-xs mr-2 text-blue-400"></i> Accounting
-                    </a></li>
-                    <li><a href="#tax" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-receipt text-xs mr-2 text-green-400"></i> Tax Services
-                    </a></li>
-                    <li><a href="#litigation" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-gavel text-xs mr-2 text-purple-400"></i> Litigation
-                    </a></li>
-                    <li><a href="#judicial-review" class="text-gray-400 hover:text-white transition-all flex items-center">
-                        <i class="fas fa-balance-scale text-xs mr-2 text-red-400"></i> Judicial Review
-                    </a></li>
+                    <li><a href="services.html#accounting" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-blue-500 mr-2 text-xs"></i>Accounting Services</a></li>
+                    <li><a href="services.html#tax" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-green-500 mr-2 text-xs"></i>Tax Planning & Compliance</a></li>
+                    <li><a href="services.html#litigation" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-purple-500 mr-2 text-xs"></i>Litigation Support</a></li>
+                    <li><a href="services.html#judicial-review" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-red-500 mr-2 text-xs"></i>Judicial Review</a></li>
                 </ul>
             </div>
-            
-            <!-- Contact Info -->
+
+            <!-- Company -->
             <div>
-                <h4 class="text-xl font-bold mb-6 gradient-text">Contact Info</h4>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
-                        <span class="text-gray-400">Jakarta Financial Center<br>Level 25, Suite 2501<br>Jakarta 12190, Indonesia</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-phone-alt text-blue-400 mr-3"></i>
-                        <span class="text-gray-400">+62 21 1234 5678</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-envelope text-blue-400 mr-3"></i>
-                        <span class="text-gray-400">info@ecconsulting.id</span>
-                    </li>
+                <h4 class="font-semibold text-white mb-4 text-lg">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-blue-500 mr-2 text-xs"></i>About Us</a></li>
+                    <li><a href="services.html" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-blue-500 mr-2 text-xs"></i>Our Services</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-blue-500 mr-2 text-xs"></i>Contact Us</a></li>
+                    <li><a href="#vision-mission" class="hover:text-blue-400 transition-all flex items-center"><i class="fas fa-chevron-right text-blue-500 mr-2 text-xs"></i>Vision & Mission</a></li>
                 </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h4 class="font-semibold text-white mb-4 text-lg">Stay Updated</h4>
+                <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter for the latest insights</p>
+                <div class="flex">
+                    <input type="email" class="bg-gray-800 text-white p-3 rounded-l-lg w-full focus:outline-none" placeholder="Your email" />
+                    <button class="gradient-bg text-white p-3 rounded-r-lg hover:opacity-90 transition-all">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        
-        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 EC Consulting. All rights reserved. | Registered-Accountant, Tax Consultant and Tax Attorney</p>
-            <p class="mt-2 text-sm">Designed with <i class="fas fa-heart text-red-500"></i> for our valued clients</p>
+
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">&copy; 2025 EC Consulting. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-all text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-all text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-all text-sm">Cookie Policy</a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
 
-<!-- Scroll to Top Button -->
-<button id="scrollToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-xl hover:bg-blue-700 transition-all opacity-0 invisible transform translate-y-10 z-40">
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-8 right-8 gradient-bg text-white p-3 rounded-full shadow-2xl z-40 hover:scale-110 transition-all transform opacity-0 invisible">
     <i class="fas fa-chevron-up"></i>
 </button>
 
-<!-- Custom JavaScript -->
 <script>
-    // Scroll to Top Functionality
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-10');
-            scrollToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
-        } else {
-            scrollToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
-            scrollToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-10');
+// Initialize Swiper
+const swiperInstance = new Swiper('.mySwiper', {
+    loop: true,
+    autoplay: { 
+        delay: 8000,
+        disableOnInteraction: false
+    },
+    pagination: { 
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function(index, className) {
+            return '<span class="' + className + '"></span>';
+        }
+    },
+    navigation: {
+        nextEl: '.swiper-button-next-custom',
+        prevEl: '.swiper-button-prev-custom',
+    },
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 1000
+});
+
+// Back to Top Button
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+    } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Animate elements on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
         }
     });
-    
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    
-    // Form Submission
-    document.querySelector('form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        // In a real implementation, you would send the form data to a server
-        alert('Thank you for your inquiry! We will contact you within 24 hours.');
-        e.target.reset();
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Service category cards animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fadeIn');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe service cards
-    document.querySelectorAll('.service-item-card, .service-category-card').forEach(card => {
-        observer.observe(card);
-    });
+}, observerOptions);
+
+// Observe all service cards and testimonial cards
+document.querySelectorAll('.service-grid-item, .testimonial-card, .hover-lift').forEach(el => {
+    observer.observe(el);
+});
 </script>
 
-<!-- Custom CSS -->
-<style>
-    /* Import Tailwind base styles */
-    @import url('https://cdn.tailwindcss.com');
-    
-    /* Custom Styles */
-    :root {
-        --primary-blue: #2563eb;
-        --secondary-blue: #3b82f6;
-        --gradient-blue: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-    }
-    
-    body {
-        font-family: 'Inter', 'Poppins', sans-serif;
-        scroll-behavior: smooth;
-    }
-    
-    .gradient-bg {
-        background: var(--gradient-blue);
-    }
-    
-    .gradient-text {
-        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    
-    .navbar-blur {
-        background: rgba(37, 99, 235, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-    
-    .navbar-link {
-        position: relative;
-        transition: all 0.3s ease;
-    }
-    
-    .navbar-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: white;
-        transition: width 0.3s ease;
-    }
-    
-    .navbar-link:hover::after {
-        width: 70%;
-    }
-    
-    .page-title {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .page-title-content {
-        position: relative;
-        z-index: 10;
-    }
-    
-    .wave-bg {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 200%;
-        height: 100px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff' fill-opacity='0.2'%3E%3C/path%3E%3C/svg%3E");
-        animation: wave 12s linear infinite;
-        transform-origin: center;
-    }
-    
-    .service-icon {
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    .service-icon.blue {
-        background: var(--gradient-blue);
-    }
-    
-    .service-icon.green {
-        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-    }
-    
-    .service-icon.purple {
-        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
-    }
-    
-    .service-icon.red {
-        background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
-    }
-    
-    .hover-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .hover-lift:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    
-    .pulse-ring {
-        position: relative;
-    }
-    
-    .pulse-ring::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-        border: 2px solid #3b82f6;
-        animation: pulse 2s infinite;
-        opacity: 0;
-    }
-    
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(1.2);
-            opacity: 0;
-        }
-    }
-    
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .animate-fadeIn {
-        animation: fadeIn 0.6s ease-out forwards;
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .page-title-content h1 {
-            font-size: 2.5rem;
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-        }
-        
-        .service-icon i {
-            font-size: 1.5rem;
-        }
-    }
-</style>
 </body>
 </html>
